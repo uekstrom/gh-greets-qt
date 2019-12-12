@@ -30,6 +30,8 @@ jobs:
       run: |
         echo Hier
         echo %CMAKE_MODULE_PATH%
+        c:
+        cd \
         dir *.cmake /s
         echo Hier2
         echo %CMAKE_MODULE_PATH%
