@@ -30,8 +30,12 @@ jobs:
       run: |
         echo Hier
         echo %CMAKE_MODULE_PATH%
+        echo %PATH%
+        cd /a/gh-greets-qt/gh-greets-qt/build/Qt
+        dir /s
         cd \
         dir *.cmake /s
+        cd 
         c:
         cd \
         dir *.cmake /s
