@@ -41,6 +41,8 @@ jobs:
         rem dir *.cmake /s
         echo Hier2
         echo %CMAKE_MODULE_PATH%
+        dir Qt
+        dir c:\Qt
         cmake -DCPACK_IFW_ROOT=Qt/Tools/QtInstallerFramework/3.1 -DCMAKE_BUILD_TYPE=Release -G"Visual Studio 16 2019" ..
 
     - name: Compile
