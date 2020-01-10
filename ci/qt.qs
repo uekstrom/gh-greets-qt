@@ -27,7 +27,9 @@ Controller.prototype.IntroductionPageCallback = function() {
 }
 
 Controller.prototype.TargetDirectoryPageCallback = function() {
-    gui.currentPageWidget().TargetDirectoryLineEdit.setText(installer.value("InstallerDirPath") + "/Qt");
+
+    gui.currentPageWidget().TargetDirectoryLineEdit.setText("D:\a\gh-greets-qt\gh-greets-qt\build\Qtinstall");
+    //installer.value("InstallerDirPath") + "/Qt");
     gui.clickButton(buttons.NextButton);
 }
 
