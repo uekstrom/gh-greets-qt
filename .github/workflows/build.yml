@@ -29,13 +29,13 @@ jobs:
       shell: cmd
       run: |
         echo Hier
-        rem echo %CMAKE_MODULE_PATH%
-        rem echo %PATH%
-        rem cd \
-        rem dir *.cmake /s
-        rem c:
-        rem cd \
-        rem dir *.cmake /s
+        echo %CMAKE_MODULE_PATH%
+        echo %PATH%
+        cd \
+        dir *.cmake /s
+        c:
+        cd \
+        dir *.cmake /s
         echo Hier2
         echo %CMAKE_MODULE_PATH%
         cmake -DCPACK_IFW_ROOT=Qt/Tools/QtInstallerFramework/3.1 -DCMAKE_BUILD_TYPE=Release -G"Visual Studio 16 2019" ..
