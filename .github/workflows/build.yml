@@ -29,16 +29,16 @@ jobs:
       shell: cmd
       run: |
         echo Hier
-        echo %CMAKE_MODULE_PATH%
-        echo %PATH%
-        cd /a/gh-greets-qt/gh-greets-qt/build/Qt
-        dir /s
-        cd \
-        dir *.cmake /s
-        cd 
-        c:
-        cd \
-        dir *.cmake /s
+        rem echo %CMAKE_MODULE_PATH%
+        rem echo %PATH%
+        rem cd /a/gh-greets-qt/gh-greets-qt/build/Qt
+        rem dir /s
+        rem cd \
+        rem dir *.cmake /s
+        rem cd 
+        rem c:
+        rem cd \
+        rem dir *.cmake /s
         echo Hier2
         echo %CMAKE_MODULE_PATH%
         cmake -DCPACK_IFW_ROOT=Qt/Tools/QtInstallerFramework/3.1 -DCMAKE_BUILD_TYPE=Release -G"Visual Studio 16 2019" ..
