@@ -31,7 +31,7 @@ jobs:
         echo Hier
         echo %CMAKE_MODULE_PATH%
         echo %PATH%
-        ls /s Qt
+        dir /s Qt
         cmake -DCMAKE_PREFIX_PATH=Qt -DCPACK_IFW_ROOT=Qt/Tools/QtInstallerFramework/3.1 -DCMAKE_BUILD_TYPE=Release -G"Visual Studio 16 2019" ..
 
     - name: Compile
