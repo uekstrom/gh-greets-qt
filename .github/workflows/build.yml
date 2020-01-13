@@ -21,7 +21,8 @@ jobs:
       working-directory: build
       shell: cmd
       run: |
-        curl -vLo qt-opensource-windows-x86-5.14.0.exe http://download.qt.io/official_releases/qt/5.14/5.14.0/qt-opensource-windows-x86-5.14.0.exe --verbose --script ..\ci\qt.qs 
+        curl -vLo qt-opensource-windows-x86-5.14.0.exe http://download.qt.io/official_releases/qt/5.14/5.14.0/qt-opensource-windows-x86-5.14.0.exe 
+        qt-opensource-windows-x86-5.14.0.exe --verbose --script ..\ci\qt.qs 
 
     - name: Configure
       working-directory: build
