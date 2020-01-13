@@ -1,3 +1,4 @@
+
 function Controller() {
     installer.autoRejectMessageBoxes();
     installer.setMessageBoxAutomaticAnswer("installationError", QMessageBox.Retry);
@@ -6,6 +7,7 @@ function Controller() {
     installer.setMessageBoxAutomaticAnswer("archiveDownloadError", QMessageBox.Retry);
     installer.installationFinished.connect(function() {
         gui.clickButton(buttons.NextButton);
+    installer.setMessageBoxAutomaticAnswer("OverwriteTargetDirectory", QMessageBox.Yes);
     })
 }
 
@@ -28,8 +30,7 @@ Controller.prototype.IntroductionPageCallback = function() {
 
 Controller.prototype.TargetDirectoryPageCallback = function() {
 
-    gui.currentPageWidget().TargetDirectoryLineEdit.setText("D:\a\gh-greets-qt\gh-greets-qt\build\Qtinstall");
-    //installer.value("InstallerDirPath") + "/Qt");
+    gui.currentPageWidget().TargetDirectoryLineEdit.setText(installer.value("InstallerDirPath") + "/Qt");
     gui.clickButton(buttons.NextButton);
 }
 
@@ -38,29 +39,17 @@ Controller.prototype.PerformInstallationPageCallback = function() {
 }
 
 Controller.prototype.ComponentSelectionPageCallback = function() {
-    var selection = gui.pageWidgetByObjectName("ComponentSelectionPage");
-    gui.findChild(selection, "Latest releases").checked = true;
-    gui.findChild(selection, "LTS").checked = false;
-    gui.findChild(selection, "FetchCategoryButton").click();
-
     var widget = gui.currentPageWidget();
     widget.deselectAll();
-    widget.selectAll();
+    widget.selectComponent("qt.qt5.5140.win64_msvc2017_64");
+    widget.selectComponent("qt.qt5.5140.qtwebengine");
 
-    //if (installer.value("os") === "win") {
-     //   widget.selectComponent("qt.qt5.5131.win64_msvc2017_64");
-    //} else if (installer.value("os") === "x11") {
-     //   widget.selectComponent("qt.qt5.5131.gcc_64");
-    //} else if (installer.value("os") === "macos") {
-     //   widget.selectComponent("qt.qt5.5131.clang_64");
-    //}
-
-    //widget.selectComponent("qt.tools.ifw.31");
-    //widget.selectComponent("qt.tools.openssl");
+    widget.selectComponent("qt.tools.ifw.31");
+    widget.selectComponent("qt.tools.openssl");
     widget.deselectComponent("qt.license");
     widget.deselectComponent("qt.installer");
 
-    gui.clickButton(buttons.NextButton);
+    gui.clickButton(buttons.NextButton, 10000);
 }
 
 Controller.prototype.LicenseAgreementPageCallback = function() {
