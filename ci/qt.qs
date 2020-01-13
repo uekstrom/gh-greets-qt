@@ -45,17 +45,18 @@ Controller.prototype.ComponentSelectionPageCallback = function() {
 
     var widget = gui.currentPageWidget();
     widget.deselectAll();
+    widget.selectAll();
 
-    if (installer.value("os") === "win") {
-        widget.selectComponent("qt.qt5.5131.win64_msvc2017_64");
-    } else if (installer.value("os") === "x11") {
-        widget.selectComponent("qt.qt5.5131.gcc_64");
-    } else if (installer.value("os") === "macos") {
-        widget.selectComponent("qt.qt5.5131.clang_64");
-    }
+    //if (installer.value("os") === "win") {
+     //   widget.selectComponent("qt.qt5.5131.win64_msvc2017_64");
+    //} else if (installer.value("os") === "x11") {
+     //   widget.selectComponent("qt.qt5.5131.gcc_64");
+    //} else if (installer.value("os") === "macos") {
+     //   widget.selectComponent("qt.qt5.5131.clang_64");
+    //}
 
-    widget.selectComponent("qt.tools.ifw.31");
-    widget.selectComponent("qt.tools.openssl");
+    //widget.selectComponent("qt.tools.ifw.31");
+    //widget.selectComponent("qt.tools.openssl");
     widget.deselectComponent("qt.license");
     widget.deselectComponent("qt.installer");
 
