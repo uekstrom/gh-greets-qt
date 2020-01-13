@@ -31,6 +31,8 @@ Controller.prototype.IntroductionPageCallback = function() {
 Controller.prototype.TargetDirectoryPageCallback = function() {
 
     gui.currentPageWidget().TargetDirectoryLineEdit.setText(installer.value("InstallerDirPath") + "/Qt");
+        console.log("Install dir ");
+    console.log(gui.currentPageWidget().TargetDirectoryLineEdit.text);
     gui.clickButton(buttons.NextButton);
 }
 
